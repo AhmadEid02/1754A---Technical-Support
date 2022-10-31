@@ -1,23 +1,25 @@
 //import java.util.StringTokenizer;
 import java.util.InputMismatchException;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.io.*;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+
 public class Test {
 
-    public static void main(String[] args) {
-		
-			InputStreamReader i = new InputStreamReader(System.in);
-			BufferedReader b = new BufferedReader(i);
-//			Scanner scan =new Scanner(System.in);
-//			Scanner scanl =new Scanner(System.in);
-			int numC = Integer.parseInt(b.readLine());
+    public static  void main(String[] args) throws NumberFormatException, IOException {
+		try{
+			InputStreamReader is = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader (is);
+			
+			int numC = Integer.parseInt(br.readLine());
 			
 			for (int loop1=0;loop1<numC;loop1++) {
 				
-				int numD =Integer.parseInt(b.readLine());
-				String s1 = b.readLine();
+				int numD =Integer.parseInt(br.readLine());
+				String s1 = br.readLine();
 				Queue<Character> q = new LinkedList<Character>();
 				for (int lp2=0;lp2<s1.length();lp2++) {
 					if (s1.charAt(lp2)=='Q')
@@ -34,11 +36,12 @@ public class Test {
 				
 			}
 			
-//			scan.close();
-//			scanl.close();
-	
+			
+		}
+		catch (InputMismatchException e) {
+			System.out.println("something went wrong.");
 		}
 	
     }
-
+}
 
